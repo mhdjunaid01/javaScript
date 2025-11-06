@@ -100,7 +100,8 @@ for (let value of arr) {}  // values
 ---
 
 ## 8. When to use for...of loop and when to use forEach method in applications?
-
+- for...of loop is suitable when you need more control over the loop , such as using break statement inside.
+- foreEach method iterate over each element of the array and perform some action on each element.
 * Use **for...of** when:
 
   * You need to loop through values
