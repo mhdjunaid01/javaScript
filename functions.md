@@ -134,3 +134,126 @@ change(obj); // obj becomes {a: 5}
 ## 9 how do you use default parameter in a function 
 <img width="906" height="363" alt="image" src="https://github.com/user-attachments/assets/f04f640a-fa94-4b5f-b587-5f27d19fdecf" />
 
+---
+Understood — here is the **same content**, but numbering starts from **9**.
+
+---
+
+````markdown
+## 9. What is the use of event handling in JS?
+
+- Event handling allows JavaScript to **respond to user actions or browser events** such as clicks, keypress, mouse movements, form submission, page load, etc.
+- It helps make web pages **interactive and dynamic**.
+
+Example:
+```js
+button.addEventListener("click", function() {
+  console.log("Button clicked");
+});
+````
+
+---
+
+## 10. What are First-Class Functions in JavaScript?
+
+* In JavaScript, functions are treated as **first-class citizens**.
+* This means functions can be:
+
+  * Stored in variables
+  * Passed as arguments to other functions
+  * Returned from other functions
+  * Stored in arrays/objects
+
+Example:
+
+```js
+const greet = () => "Hello";      // stored in variable
+function callMe(fn) { fn(); }     // passed as argument
+```
+
+---
+
+## 11. What are Pure and Impure Functions in JS?
+
+### Pure Function
+
+* Returns the **same output for the same input**
+* Does **not modify external state** (no side effects)
+
+```js
+function add(a, b) {
+  return a + b;
+}
+```
+
+### Impure Function
+
+* Output may vary even with same input
+* **Modifies external state** or uses external values
+
+```js
+let x = 5;
+function addToX(a) {
+  x = x + a;   // modifies external variable
+  return x;
+}
+```
+
+---
+
+## 12. What is Function Currying in JS?
+
+* Currying transforms a function with multiple arguments into a **series of functions**, each taking one argument.
+* Helps in reusability and functional programming patterns.
+
+Example:
+
+```js
+function curry(a) {
+  return function(b) {
+    return function(c) {
+      return a + b + c;
+    };
+  };
+}
+
+curry(1)(2)(3); // 6
+```
+
+---
+
+## 13. What are call, apply, and bind methods in JS?
+
+These methods are used to **control the value of `this`** inside a function.
+
+### `call()`
+
+* Calls a function with given `this` value and **arguments separated by commas**.
+
+```js
+func.call(obj, arg1, arg2);
+```
+
+### `apply()`
+
+* Calls a function with given `this` value and **arguments as an array**.
+
+```js
+func.apply(obj, [arg1, arg2]);
+```
+
+### `bind()`
+
+* Returns a **new function** with permanently bound `this`.
+
+```js
+const newFunc = func.bind(obj);
+newFunc();
+```
+
+| Method  | Executes Immediately?       | Arguments       |
+| ------- | --------------------------- | --------------- |
+| call()  | ✅ Yes                       | comma separated |
+| apply() | ✅ Yes                       | array           |
+| bind()  | ❌ No (returns new function) | comma separated |
+
