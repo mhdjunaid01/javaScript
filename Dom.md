@@ -122,3 +122,93 @@ Example:
 element.innerHTML = "<b>Hello</b>"     // Bold text
 element.textContent = "<b>Hello</b>"   // Displays tags as text
 ```
+Understood — you want **these additional DOM questions answered** in the **same MERN interview style** and **continuing numbering** from the previous DOM chapter.
+
+Since DOM chapter ended at **7**, these will start from **8**.
+
+---
+
+````
+## 8. How to add and remove properties of HTML elements in the DOM using JS?
+
+We can add or remove element properties using JavaScript directly through property assignment or using `removeAttribute()`.
+
+### Add Properties
+```js
+element.id = "title";
+element.className = "highlight";
+element.value = "Junaid";
+````
+
+### Remove Properties
+
+```js
+element.removeAttribute("id");
+element.removeAttribute("class");
+```
+
+---
+
+## 9. How to add and remove style from HTML elements in DOM using JS?
+
+### Add/Modify Style
+
+```
+element.style.color = "red";
+element.style.backgroundColor = "yellow";
+element.style.fontSize = "20px";
+```
+
+### Remove Style
+
+```
+element.style.color = "";
+element.style.backgroundColor = "";
+```
+
+> In real MERN projects, we avoid inline styling and prefer CSS classes or styled-components in React.
+
+---
+
+## 10. How to create new elements in DOM using JS? What is the difference between createElement() and cloneNode()?
+
+### Create New Element
+
+```
+const div = document.createElement("div");
+div.textContent = "Hello World";
+document.body.appendChild(div);
+```
+
+### `createElement()` vs `cloneNode()`
+
+| Feature              | createElement()   | cloneNode()                  |
+| -------------------- | ----------------- | ---------------------------- |
+| Creates new element? | ✅ Yes             | ❌ No (copies existing)       |
+| Copies children?     | ❌ No              | Optional (`cloneNode(true)`) |
+| Use case             | Fresh new element | Duplicate existing element   |
+
+Example:
+
+```
+const btn2 = btn.cloneNode(true);   // deep clone
+```
+
+---
+
+## 11. What is the difference between createElement() and createTextNode()?
+
+| Method             | Creates        | Contains HTML?    | Use Case                           |
+| ------------------ | -------------- | ----------------- | ---------------------------------- |
+| `createElement()`  | HTML element   | Can contain HTML  | To create tags like `<div>`, `<p>` |
+| `createTextNode()` | Text node only | ❌ No HTML allowed | To create only text without tags   |
+
+Example:
+
+```
+const p = document.createElement("p");      // <p>
+const text = document.createTextNode("Hello"); 
+p.appendChild(text);
+```
+
+
