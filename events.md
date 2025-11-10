@@ -31,7 +31,7 @@ Common event categories:
 The Event Object is an object automatically passed to event handlers that contains **details about the event** such as target element, type of event, mouse position, key pressed, etc.
 
 Example:
-```js
+```
 button.addEventListener("click", function(event) {
   console.log(event.target);   // element clicked
 });
