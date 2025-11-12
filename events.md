@@ -135,3 +135,6 @@ button.addEventListener("click", function() {
 ## 10. How to remove an event handler from an element in JS?
 
 Use `removeEventListener()` and ensure the same function reference is used for removal.
+
+---
+
